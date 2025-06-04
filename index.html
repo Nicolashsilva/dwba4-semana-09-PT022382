@@ -7,8 +7,7 @@
     <title>dwba4-semana-07-PT3022382</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
-        body,
-        html {
+        body, html {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -33,8 +32,7 @@
             padding: 10px 20px;
         }
 
-        .nav a:hover,
-        .nav a.active {
+        .nav a:hover, .nav a.active {
             background-color: red;
             color: white;
             text-decoration: none;
@@ -52,35 +50,10 @@
             max-height: 100px;
         }
 
-        .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        }
-
-        .dropdown-content a {
-            color: #0033a0;
-            padding: 10px 20px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
         .container {
             padding: 20px 15px;
         }
 
-        /* Alterado para slideshow */
         .slideshow-container {
             position: relative;
             max-width: 100%;
@@ -91,8 +64,7 @@
             display: none;
         }
 
-        .prev,
-        .next {
+        .prev, .next {
             cursor: pointer;
             position: absolute;
             top: 50%;
@@ -112,19 +84,8 @@
             border-radius: 3px 0 0 3px;
         }
 
-        .prev:hover,
-        .next:hover {
+        .prev:hover, .next:hover {
             background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .text {
-            color: #f2f2f2;
-            font-size: 15px;
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 8px;
-            width: 100%;
-            text-align: center;
         }
 
         .dot {
@@ -138,8 +99,7 @@
             transition: background-color 0.6s ease;
         }
 
-        .active,
-        .dot:hover {
+        .active, .dot:hover {
             background-color: #717171;
         }
 
@@ -151,8 +111,7 @@
         @keyframes fade {
             from {
                 opacity: 0.4
-            }
-
+            } 
             to {
                 opacity: 1
             }
@@ -160,7 +119,6 @@
 
         .footer {
             background-color: #FFFFFF;
-            color: white;
             padding: 10px;
             width: 100%;
             text-align: right;
@@ -173,10 +131,8 @@
             margin-bottom: 10px;
         }
 
-        .footer img.icon,
-        .footer img.facebook-icon {
+        .footer img.icon, .footer img.facebook-icon {
             width: 20px;
-            /* Adjusted size */
             height: auto;
             margin-right: 10px;
         }
@@ -198,8 +154,7 @@
             margin-bottom: 20px;
         }
 
-        input[type="text"],
-        input[type="password"] {
+        input[type="text"], input[type="password"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 20px;
@@ -251,8 +206,7 @@
             margin-top: 20px;
         }
 
-        .about-icon,
-        .contact-icon {
+        .about-icon, .contact-icon {
             width: 20px;
             height: auto;
         }
@@ -266,259 +220,252 @@
 
 <body>
 
-    <div class="header">
-        <div class="nav">
-            <a href="#home" onclick="showSection('home')">HOME</a>
-            <a href="#evento" onclick="showSection('evento')">EVENTOS</a>
-            <a href="#analise" onclick="showSection('analise')">CURSOS</a>
-            <a href="#contato" onclick="showSection('contato')">CONTATO</a>
-            <a href="#sobre" onclick="showSection('sobre')">SOBRE</a>
-            <a href="#login" onclick="showSection('login')">ENTRAR</a>
-        </div>
-        <div class="logo">
-            <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/Logo.jpg" alt="Logo Instituto Federal São Paulo">
-        </div>
+<div class="header">
+    <div class="nav">
+        <a href="#home" onclick="showSection('home')">HOME</a>
+        <a href="#evento" onclick="showSection('evento')">EVENTOS</a>
+        <a href="#analise" onclick="showSection('analise')">CURSOS</a>
+        <a href="#contato" onclick="showSection('contato')">CONTATO</a>
+        <a href="#sobre" onclick="showSection('sobre')">SOBRE</a>
+        <a href="#login" onclick="showSection('login')">ENTRAR</a>
     </div>
-
-    <div id="home" class="container intern-content">
-        <h2>Acontece no IFSP!</h2>
-        <!-- Início da adição do slideshow -->
-        <div class="slideshow-container">
-            <div class="slides fade">
-                <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/snct.jpg?raw=true" style="width:100%">
-                <div class="text">Semana Nacional de Ciência e Tecnologia</div>
-            </div>
-
-            <div class="slides fade">
-                <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/residencia.png?raw=true" style="width:100%">
-                <div class="text">Residência Pedagógica</div>
-            </div>
-
-            <div class="slides fade">
-                <img src="https://github.com/Nicolashsilva/PTBDWC_PT3022382_AC07/blob/main/maratona.jpeg?raw=true" style="width:100%">
-                <div class="text">Maratona InterIF</div>
-            </div>
-
-            <div class="slides fade">
-                <iframe src="https://www.youtube.com/embed/5g5LQe3m8Po" style="width:100%; height:100%;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <div class="text">Desafios de inovação</div>
-            </div>
-
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-        </div>
-        <!-- Fim da adição do slideshow -->
+    <div class="logo">
+        <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/Logo.jpg" alt="Logo Instituto Federal São Paulo">
     </div>
+</div>
 
-    <div id="login" class="container hidden">
-        <div class="login-container">
-            <h2>Entrar</h2>
-            <form id="loginForm">
-                <div class="login-group">
-                    <label for="loginUsuario">Usuário</label>
-                    <input type="text" id="loginUsuario" name="loginUsuario" required>
-                </div>
-                <div class="login-group">
-                    <label for="loginSenha">Senha</label>
-                    <input type="password" id="loginSenha" name="loginSenha" required>
-                </div>
-                <a href="#" class="forgot-password">Esqueci a senha</a>
-                <button type="submit">Entrar</button>
-            </form>
+<div id="home" class="container intern-content">
+    <h2>Acontece no IFSP!</h2>
+    <!-- Início da adição do slideshow -->
+    <div class="slideshow-container">
+        <div class="slides fade">
+            <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/snct.jpg?raw=true" style="width:100%">
+            <div class="text">Semana Nacional de Ciência e Tecnologia</div>
         </div>
+
+        <div class="slides fade">
+            <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/residencia.png?raw=true" style="width:100%">
+            <div class="text">Residência Pedagógica</div>
+        </div>
+
+        <div class="slides fade">
+            <img src="https://github.com/Nicolashsilva/PTBDWC_PT3022382_AC07/blob/main/maratona.jpeg?raw=true" style="width:100%">
+            <div class="text">Maratona InterIF</div>
+        </div>
+
+        <div class="slides fade">
+            <iframe src="https://www.youtube.com/embed/5g5LQe3m8Po" style="width:100%; height:100%;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="text">Desafios de inovação</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-
-    <div id="analise" class="container hidden intern-content">
-        <h2><strong>Tecnologia em Análise e Desenvolvimento de Sistemas</strong></h2>
-        <p><em>Objetivo Geral</em></p>
-        <p>O curso de Análise e Desenvolvimento de Sistemas do Câmpus São Paulo Pirituba tem como objetivo capacitar o
-            egresso a atuar na área de Tecnologia de Informação (TI) em atividades como análise, projeto, desenvolvimento,
-            gerenciamento e implantação de sistemas de informação computacionais. Essa capacitação é pautada pela
-            valorização da prática e competências técnicas, tanto em análise quanto em desenvolvimento e pela atualização
-            diante da realidade tecnológica, de modo que o profissional seja um mediador competente entre o desenvolvimento
-            tecnológico e a sociedade em que se insere.</p>
+    <br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
     </div>
+    <!-- Fim da adição do slideshow -->
+</div>
 
-    <div id="evento" class="container hidden intern-content">
-        <h2>Inscreva-se</h2>
-        <form id="eventForm">
-            <label for="eventoEvento">Evento</label>
-            <select id="eventoEvento" name="eventoEvento" required>
-                <option value="">-- Selecione --</option>
-                <option value="voeSemAsas">Voe sem asas</option>
-                <option value="festaJunina">Festa junina</option>
-                <option value="semanaTecnologia">Semana de tecnologia</option>
-            </select>
-
-            <fieldset>
-                <legend>Informações de Acesso</legend>
-                <label for="usuario">Usuário</label>
-                <input type="text" id="usuario" name="usuario" required>
-
-                <label for="senha">Senha</label>
-                <input type="password" id="senha" name="senha" required>
-
-                <label for="confirmaSenha">Confirme a Senha</label>
-                <input type="password" id="confirmaSenha" name="confirmaSenha" required>
-            </fieldset>
-
-            <fieldset>
-                <legend>Informações Pessoais</legend>
-                <label for="nomeCompleto">Nome Completo</label>
-                <input type="text" id="nomeCompleto" name="nomeCompleto" required>
-
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="celular">Celular</label>
-                <input type="tel" id="celular" name="celular" required pattern="$\d{2}$ \d{5}-\d{4}" placeholder="(99) 99999-9999">
-
-                <div class="radio-group">
-                    <label>Sexo</label>
-                    <label><input type="radio" id="masculino" name="sexo" value="masculino" required> Masculino</label>
-                    <label><input type="radio" id="feminino" name="sexo" value="feminino"> Feminino</label>
-                </div>
-
-                <label for="dataNascimento">Data de Nascimento</label>
-                <input type="date" id="dataNascimento" name="dataNascimento" required>
-
-                <div class="color-container">
-                    <label for="corFavorita">Cor Favorita</label>
-                    <input type="color" id="corFavorita" name="corFavorita" value="#000000" required>
-                </div>
-
-                <label for="github">Perfil no Github</label>
-                <input type="url" id="github" name="github">
-            </fieldset>
-
-            <div class="submit-buttons">
-                <button type="submit">Inscrever-se</button>
-                <button type="button" onclick="limparFormulario('eventForm')">Limpar</button>
+<div id="login" class="container hidden">
+    <div class="login-container">
+        <h2>Entrar</h2>
+        <form id="loginForm">
+            <div class="login-group">
+                <label for="loginUsuario">Usuário</label>
+                <input type="text" id="loginUsuario" name="loginUsuario" required>
             </div>
+            <div class="login-group">
+                <label for="loginSenha">Senha</label>
+                <input type="password" id="loginSenha" name="loginSenha" required>
+            </div>
+            <a href="#" class="forgot-password">Esqueci a senha</a>
+            <button type="submit">Entrar</button>
         </form>
     </div>
+</div>
 
-    <div id="contato" class="container hidden intern-content">
-        <h2>Mande uma mensagem</h2>
-        <form id="contatoForm">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" required>
+<div id="analise" class="container hidden intern-content">
+    <h2><strong>Tecnologia em Análise e Desenvolvimento de Sistemas</strong></h2>
+    <p><em>Objetivo Geral</em></p>
+    <p>O curso de Análise e Desenvolvimento de Sistemas do Câmpus São Paulo Pirituba tem como objetivo capacitar o egresso a atuar na área de Tecnologia de Informação (TI) em atividades como análise, projeto, desenvolvimento, gerenciamento e implantação de sistemas de informação computacionais. Essa capacitação é pautada pela valorização da prática e competências técnicas, tanto em análise quanto em desenvolvimento e pela atualização diante da realidade tecnológica, de modo que o profissional seja um mediador competente entre o desenvolvimento tecnológico e a sociedade em que se insere.</p>
+</div>
 
-            <label for="email">E-Mail</label>
+<div id="evento" class="container hidden intern-content">
+    <h2>Inscreva-se</h2>
+    <form id="eventForm">
+        <label for="eventoEvento">Evento</label>
+        <select id="eventoEvento" name="eventoEvento" required>
+            <option value="">-- Selecione --</option>
+            <option value="voeSemAsas">Voe sem asas</option>
+            <option value="festaJunina">Festa junina</option>
+            <option value="semanaTecnologia">Semana de tecnologia</option>
+        </select>
+
+        <fieldset>
+            <legend>Informações de Acesso</legend>
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" name="usuario" required>
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <label for="confirmaSenha">Confirme a Senha</label>
+            <input type="password" id="confirmaSenha" name="confirmaSenha" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+            <label for="nomeCompleto">Nome Completo</label>
+            <input type="text" id="nomeCompleto" name="nomeCompleto" required>
+
+            <label for="email">E-mail</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" name="telefone" required pattern="$\d{2}$ \d{5}-\d{4}" placeholder="(99) 99999-9999">
+            <label for="celular">Celular</label>
+            <input type="tel" id="celular" name="celular" required pattern="$\d{2}$ \d{5}-\d{4}" placeholder="(99) 99999-9999">
 
-            <label for="assunto">Assunto</label>
-            <select id="assunto" name="assunto" required>
-                <option value="">-- Selecione --</option>
-                <option value="reclamacao">Reclamação</option>
-                <option value="sugestao">Sugestão</option>
-            </select>
-
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" required></textarea>
-
-            <fieldset>
-                <legend>Opções de Resposta</legend>
-                <div class="radio-options">
-                    <label><input type="radio" id="respostaEmail" name="opcaoResposta" value="email" required> E-Mail</label>
-                    <label><input type="radio" id="respostaTelefone" name="opcaoResposta" value="telefone"> Telefone</label>
-                </div>
-            </fieldset>
-
-            <div style="text-align: center; margin-top: 20px;">
-                <button type="submit" style="background-color: #008000; width: 100px;">Enviar</button>
+            <div class="radio-group">
+                <label>Sexo</label>
+                <label><input type="radio" id="masculino" name="sexo" value="masculino" required> Masculino</label>
+                <label><input type="radio" id="feminino" name="sexo" value="feminino"> Feminino</label>
             </div>
-        </form>
-    </div>
 
-    <div id="sobre" class="sobre-container hidden">
-        <h2>Sobre</h2>
-        <div class="footer-icons">
-            <a href="https://www.facebook.com/ifsppirituba/?locale=pt_BR" target="_blank">
-                <img src="https://github.com/Nicolashsilva/PTBDWC_PT3022382_AC07/blob/main/facebook.png?raw=true" alt="Ícone do Facebook" class="about-icon">
-            </a>
+            <label for="dataNascimento">Data de Nascimento</label>
+            <input type="date" id="dataNascimento" name="dataNascimento" required>
+
+            <div class="color-container">
+                <label for="corFavorita">Cor Favorita</label>
+                <input type="color" id="corFavorita" name="corFavorita" value="#000000" required>
+            </div>
+
+            <label for="github">Perfil no Github</label>
+            <input type="url" id="github" name="github">
+        </fieldset>
+
+        <div class="submit-buttons">
+            <button type="submit">Inscrever-se</button>
+            <button type="button" onclick="limparFormulario('eventForm')">Limpar</button>
         </div>
-        <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011)
-            2504-0100</p>
-    </div>
+    </form>
+</div>
 
-    <div class="footer" id="footer">
-        <div class="footer-icons">
-            <a href="#" onclick="scrollToTop()">
-                <img src="https://github.com/Nicolashsilva/PTBDWC_PT3022382_AC07/blob/main/MoveTop%20(1).png?raw=true" alt="Ícone de seta para cima" class="icon">
-            </a>
-            <a href="https://www.facebook.com/ifsppirituba/?locale=pt_BR" target="_blank">
-                <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/facebook.png" alt="Ícone do Facebook" class="facebook-icon">
-            </a>
+<div id="contato" class="container hidden intern-content">
+    <h2>Mande uma mensagem</h2>
+    <form id="contatoForm">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" name="telefone" required pattern="$\d{2}$ \d{5}-\d{4}" placeholder="(99) 99999-9999">
+
+        <label for="assunto">Assunto</label>
+        <select id="assunto" name="assunto" required>
+            <option value="">-- Selecione --</option>
+            <option value="reclamacao">Reclamação</option>
+            <option value="sugestao">Sugestão</option>
+        </select>
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" required></textarea>
+
+        <fieldset>
+            <legend>Opções de Resposta</legend>
+            <div class="radio-options">
+                <label><input type="radio" id="respostaEmail" name="opcaoResposta" value="email" required> E-Mail</label>
+                <label><input type="radio" id="respostaTelefone" name="opcaoResposta" value="telefone"> Telefone</label>
+            </div>
+        </fieldset>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <button type="submit" style="background-color: #008000; width: 100px;">Enviar</button>
         </div>
-        <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011)
-            2504-0100</p>
+    </form>
+</div>
+
+<div id="sobre" class="sobre-container hidden">
+    <h2>Sobre</h2>
+    <div class="footer-icons">
+        <a href="https://www.facebook.com/ifsppirituba/?locale=pt_BR" target="_blank">
+            <img src="https://github.com/Nicolashsilva/PTBDWC_PT3022382_AC07/blob/main/facebook.png?raw=true" alt="Ícone do Facebook" class="about-icon">
+        </a>
     </div>
+    <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011) 2504-0100</p>
+</div>
 
-    <script>
-        function showSection(sectionId) {
-            var sections = document.getElementsByClassName('container');
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].classList.add('hidden');
-            }
-            document.getElementById(sectionId).classList.remove('hidden');
+<div class="footer" id="footer">
+    <div class="footer-icons">
+        <a href="#" onclick="scrollToTop()">
+            <img src="https://github.com/Nicolashsilva/PTBDWC_PT3022382_AC07/blob/main/MoveTop%20(1).png?raw=true" alt="Ícone de seta para cima" class="icon">
+        </a>
+        <a href="https://www.facebook.com/ifsppirituba/?locale=pt_BR" target="_blank">
+            <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/facebook.png" alt="Ícone do Facebook" class="facebook-icon">
+        </a>
+    </div>
+    <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011) 2504-0100</p>
+</div>
 
-            var footer = document.getElementById('footer');
-            if (sectionId === 'analise' || sectionId === 'contato' || sectionId === 'login' || sectionId === 'sobre') {
-                footer.style.display = 'none';
+<script>
+    function showSection(sectionId) {
+        var sections = document.getElementsByClassName('container');
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].classList.add('hidden');
+        }
+        document.getElementById(sectionId).classList.remove('hidden');
+
+        var footer = document.getElementById('footer');
+        if (sectionId === 'analise' || sectionId === 'contato' || sectionId === 'login' || sectionId === 'sobre') {
+            footer.style.display = 'none';
+        } else {
+            footer.style.display = 'block';
+        }
+
+        var navLinks = document.querySelectorAll(".nav a");
+        navLinks.forEach((link) => {
+            if (link.href.includes(sectionId)) {
+                link.classList.add("active");
             } else {
-                footer.style.display = 'block';
-            }
-
-            var navLinks = document.querySelectorAll(".nav a");
-            navLinks.forEach((link) => {
-                if (link.href.includes(sectionId)) {
-                    link.classList.add("active");
-                } else {
-                    link.classList.remove("active");
-                }
-            });
-        }
-
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
- behavior: 'smooth'
-            });
-        }
-
-        function limparFormulario(formId) {
-            document.getElementById(formId).reset();
-        }
-
-        document.getElementById('contatoForm').addEventListener('submit', function (event) {
-            const telefone = document.getElementById('telefone').value;
-            const telefonePattern = /^$\d{2}$ \d{5}-\d{4}$/;
-
-            if (!telefonePattern.test(telefone)) {
-                alert('Por favor, insira um número de telefone no formato correto: (99) 99999-9999');
-                event.preventDefault();
+                link.classList.remove("active");
             }
         });
+    }
 
-        document.getElementById('loginForm').addEventListener('submit', function (event) {
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    function limparFormulario(formId) {
+        document.getElementById(formId).reset();
+    }
+
+    document.getElementById('contatoForm').addEventListener('submit', function (event) {
+        const telefone = document.getElementById('telefone').value;
+        const telefonePattern = /^$\d{2}$ \d{5}-\d{4}$/;
+
+        if (!telefonePattern.test(telefone)) {
+            alert('Por favor, insira um número de telefone no formato correto: (99) 99999-9999');
             event.preventDefault();
+        }
+    });
 
-            const usuario = document.getElementById('loginUsuario').value;
-            const senha = document.getElementById('loginSenha').value;
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+        event.preventDefault();
 
-            if (!usuario || !senha) {
-                alert('Por favor, preencha todos os campos.');
+        const usuario = document.getElementById('loginUsuario').value;
+        const senha = document.getElementById('loginSenha').value;
+
+        if (!usuario || !senha) {
+alert('Por favor, preencha todos os campos.');
             } else {
                 alert('Login realizado com sucesso!');
                 document.getElementById('loginForm').reset();
