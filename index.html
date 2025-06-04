@@ -80,16 +80,82 @@
             padding: 20px 15px;
         }
 
-        .evento img {
-            width: 100%;
-            max-width: 400px;
+        /* Alterado para slideshow */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
         }
 
-        .suap iframe {
+        .slides {
+            display: none;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
             width: 100%;
-            max-width: 560px;
-            height: 315px;
-            border: none;
+            text-align: center;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4
+            }
+
+            to {
+                opacity: 1
+            }
         }
 
         .footer {
@@ -210,35 +276,45 @@
             <a href="#login" onclick="showSection('login')">ENTRAR</a>
         </div>
         <div class="logo">
-            <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/Logo.jpg"
-                alt="Logo Instituto Federal São Paulo">
+            <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/Logo.jpg" alt="Logo Instituto Federal São Paulo">
         </div>
     </div>
 
     <div id="home" class="container intern-content">
         <h2>Acontece no IFSP!</h2>
-        <div>
-            <img src="https://github.com/Nicolashsilva/PTBDWC_PT3022382_AC07/blob/main/eleicoes.jpg?raw=true" alt="Eleições">
-            <p>Radar IFSP: informe-se sobre as eleições do dia 13 de outubro<br>Todos os alunos e servidores podem votar;
-                acesse aqui a cabine de votação online do seu campus</p>
-        </div>
-        <div>
-            <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/snct.jpg?raw=true" alt="Semana Nacional de Ciência e Tecnologia">
-            <p>IFSP: SNCT reúne atividades entre 19 e 24 de outubro<br>Programação reunirá iniciativas para aproximar pesquisadores e atividades culturais</p>
-        </div>
-        <div>
-            <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/residencia.png?raw=true" alt="Residência Pedagógica">
-            <p>IFSP oferece bolsa aos voluntários da Residência Pedagógica<br>Bolsa de R\$ 400,00 será paga pelo período de três meses</p>
-        </div>
-        <div>
-            <img src="https://github.com/Nicolashsilva/PTBDWC_PT3022382_AC07/blob/main/maratona.jpeg?raw=true" alt="Maratona InterIF">
-            <p>Inscrições abertas para a III Maratona InterIF<br>Maratona de programação do IFSP será realizada online, no dia 31 de outubro; inscrições até 26 de outubro</p>
-        </div>
+        <!-- Início da adição do slideshow -->
+        <div class="slideshow-container">
+            <div class="slides fade">
+                <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/snct.jpg?raw=true" style="width:100%">
+                <div class="text">Semana Nacional de Ciência e Tecnologia</div>
+            </div>
 
-        <h2>Conheça os desafios de inovação</h2>
-        <iframe src="https://www.youtube.com/embed/5g5LQe3m8Po"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+            <div class="slides fade">
+                <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/residencia.png?raw=true" style="width:100%">
+                <div class="text">Residência Pedagógica</div>
+            </div>
+
+            <div class="slides fade">
+                <img src="https://github.com/Nicolashsilva/PTBDWC_PT3022382_AC07/blob/main/maratona.jpeg?raw=true" style="width:100%">
+                <div class="text">Maratona InterIF</div>
+            </div>
+
+            <div class="slides fade">
+                <iframe src="https://www.youtube.com/embed/5g5LQe3m8Po" style="width:100%; height:100%;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="text">Desafios de inovação</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+        <!-- Fim da adição do slideshow -->
     </div>
 
     <div id="login" class="container hidden">
@@ -302,8 +378,7 @@
                 <input type="email" id="email" name="email" required>
 
                 <label for="celular">Celular</label>
-                <input type="tel" id="celular" name="celular" required pattern="$\d{2}$ \d{5}-\d{4}"
-                    placeholder="(99) 99999-9999">
+                <input type="tel" id="celular" name="celular" required pattern="$\d{2}$ \d{5}-\d{4}" placeholder="(99) 99999-9999">
 
                 <div class="radio-group">
                     <label>Sexo</label>
@@ -340,8 +415,7 @@
             <input type="email" id="email" name="email" required>
 
             <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" name="telefone" required pattern="$\d{2}$ \d{5}-\d{4}"
-                placeholder="(99) 99999-9999">
+            <input type="tel" id="telefone" name="telefone" required pattern="$\d{2}$ \d{5}-\d{4}" placeholder="(99) 99999-9999">
 
             <label for="assunto">Assunto</label>
             <select id="assunto" name="assunto" required>
@@ -371,8 +445,7 @@
         <h2>Sobre</h2>
         <div class="footer-icons">
             <a href="https://www.facebook.com/ifsppirituba/?locale=pt_BR" target="_blank">
-                <img src="https://github.com/Nicolashsilva/PTBDWC_PT3022382_AC07/blob/main/facebook.png?raw=true"
-                    alt="Ícone do Facebook" class="about-icon">
+                <img src="https://github.com/Nicolashsilva/PTBDWC_PT3022382_AC07/blob/main/facebook.png?raw=true" alt="Ícone do Facebook" class="about-icon">
             </a>
         </div>
         <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011)
@@ -382,12 +455,10 @@
     <div class="footer" id="footer">
         <div class="footer-icons">
             <a href="#" onclick="scrollToTop()">
-                <img src="https://github.com/Nicolashsilva/PTBDWC_PT3022382_AC07/blob/main/MoveTop%20(1).png?raw=true"
-                    alt="Ícone de seta para cima" class="icon">
+                <img src="https://github.com/Nicolashsilva/PTBDWC_PT3022382_AC07/blob/main/MoveTop%20(1).png?raw=true" alt="Ícone de seta para cima" class="icon">
             </a>
             <a href="https://www.facebook.com/ifsppirituba/?locale=pt_BR" target="_blank">
-                <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/facebook.png"
-                    alt="Ícone do Facebook" class="facebook-icon">
+                <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/facebook.png" alt="Ícone do Facebook" class="facebook-icon">
             </a>
         </div>
         <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011)
@@ -422,7 +493,7 @@
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth'
+ behavior: 'smooth'
             });
         }
 
